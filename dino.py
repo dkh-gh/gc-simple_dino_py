@@ -1,4 +1,8 @@
 # compile 2 exe!
+# ДЗ: 
+# 	1. заставить кактусы двигаться
+#   2. при коллизии закрасить игрока красным
+# 	3. при выходе кактуса за левый край экана - перекинуть его за правый
 
 import tkinter as tk
 from time import sleep
@@ -36,12 +40,18 @@ cactus_3 = {
 }
 
 while 1:
+	# очистка
 	img.delete('all')
 
+	# изменение переменных
 	cactus_1['x'] -= speed
 	cactus_2['x'] -= speed
 	cactus_3['x'] -= speed
 
+	# логика 
+	# . . .
+
+	# отрисовка
 	# ground
 	img.create_line(0,250, 800,250)
 	# player
@@ -61,8 +71,8 @@ while 1:
 		cactus_3['x']-10*cactus_3['size'],175,
 		cactus_3['x']+10*cactus_3['size'],250,)
 
-
-	sleep(0.05)
+	# обновление отрисовки
 	img.update()
+	sleep(0.05)
 
 
